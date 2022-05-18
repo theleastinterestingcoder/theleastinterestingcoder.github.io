@@ -61,23 +61,24 @@
     </section>
     <!-- /section -->
     <section class="wrapper bg-light">
-      <div class="container pb-14 pb-md-16 mb-lg-21 mb-xl-23">
-        <div class="row gx-0 mb-16 mb-mb-20">
-          <div class="col-9 col-sm-10 col-lg-9 mx-auto mt-n15 mt-md-n20" data-cues data-group="images"
-            data-delay="1500">
-            <img class="img-fluid mx-auto rounded shadow-lg" data-cue="slideInUp" src="./assets/img/photos/sa1.jpg"
-              srcset="./assets/img/photos/Stellarhero1.png" alt="" />
-            <img class="position-absolute rounded shadow-lg" data-cue="slideInRight" src="./assets/img/photos/sa2.jpg"
-              srcset="./assets/img/photos/Stellarhero3.png" style="top: 35%; right:-25%; max-width:50%; height: auto;"
-              alt="" />
-            <img class="position-absolute rounded shadow-lg" data-cue="slideInLeft" src="./assets/img/photos/sa3.jpg"
-              srcset="./assets/img/photos/Stellarhero2.png" style="top: 20%; left:-10%; max-width:30%; height: auto;"
-              alt="" />
-            <img class="position-absolute rounded shadow-lg" data-cue="slideInLeft" src="./assets/img/photos/sa4.jpg"
-              srcset="./assets/img/photos/" style="bottom: 10%; left:-13%; max-width:30%; height: auto;" alt="" />
-          </div>
-          <!-- /column -->
+      <div class="row gx-0 mb-16 mb-mb-20">
+        <div class="col-9 col-sm-10 col-lg-9 mx-auto mt-n15 mt-md-n20" data-cues data-group="images" data-delay="1500">
+          <img class="img-fluid mx-auto rounded shadow-lg" data-cue="slideInUp" src="./assets/img/photos/sa1.jpg"
+            srcset="./assets/img/photos/Stellarhero1.png" alt="" />
+          <img class="position-absolute rounded shadow-lg" data-cue="slideInRight" src="./assets/img/photos/sa2.jpg"
+            srcset="./assets/img/photos/Stellarhero3.png" style="top: 35%; right:-25%; max-width:50%; height: auto;"
+            alt="" />
+          <img class="position-absolute rounded shadow-lg" data-cue="slideInLeft" src="./assets/img/photos/sa3.jpg"
+            srcset="./assets/img/photos/Stellarhero2.png" style="top: 20%; left:-10%; max-width:30%; height: auto;"
+            alt="" />
+          <img class="position-absolute rounded shadow-lg" data-cue="slideInLeft" src="./assets/img/photos/sa4.jpg"
+            srcset="./assets/img/photos/" style="bottom: 10%; left:-13%; max-width:30%; height: auto;" alt="" />
         </div>
+        <!-- /column -->
+      </div>
+    </section>
+    <section class="wrapper bg-soft-primary">
+      <div class="container">
         <!-- /.row -->
         <row>
           <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center mb-14 mb-md-18">
@@ -179,7 +180,7 @@
           </div>
         </row>
         <!--/.row -->
-        <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
+        <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center pb-10">
           <div class="col-lg-6 position-relative">
             <div class="shape rounded bg-pale-yellow rellax d-block" data-rellax-speed="0"
               style="top: 50%; left: 50%; width: 50%; height: 60%; transform: translate(-50%,-50%);z-index:0"></div>
@@ -224,7 +225,7 @@
       <!-- /.container -->
     </section>
     <!-- /section -->
-    <section class="wrapper bg-soft-primary">
+    <section class="wrapper bg-light">
       <div class="container py-14 pt-md-16 pt-lg-0 pb-md-16">
         <div class="row text-center" data-cue="slideInUp">
           <div class="col-lg-10 mx-auto">
@@ -277,9 +278,7 @@
       <!-- /.container -->
     </section>
     <!-- /section -->
-    <!-- /section -->
-    <!-- /section -->
-    <section class="wrapper bg-light">
+    <section class="wrapper bg-soft-primary">
       <div class="container py-14 py-md-16">
         <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
           <div class="col-lg-4">
@@ -340,7 +339,7 @@
     </section>
     <section class="wrapper bg-light">
       <div class="container py-14 py-md-16" id="contact-us">
-        <div class="card bg-soft-primary">
+        <div class="card">
           <div class="card-body p-12">
             <div class="row gx-md-8 gx-xl-12 gy-10">
               <div class="col-lg-6">
@@ -355,8 +354,8 @@
                   <div class="row gx-4">
                     <div class="col-md-6">
                       <div class="form-floating mb-4">
-                        <input id="frm_name" type="text" name="name" class="form-control border-0" placeholder="Jane"
-                          required="required" data-error="First Name is required.">
+                        <input id="frm_name" type="text" name="name" class="form-control border-0 bg-soft-primary"
+                          placeholder="Jane" required="required" data-error="First Name is required.">
                         <label for="frm_name">Name *</label>
                         <div class="invalid-feedback">
                           Please enter your name.
@@ -366,7 +365,7 @@
                     <!-- /column -->
                     <div class="col-md-6">
                       <div class="form-floating mb-4">
-                        <input id="frm_email" type="email" name="email" class="form-control border-0"
+                        <input id="frm_email" type="email" name="email" class="form-control border-0 bg-soft-primary"
                           placeholder="jane.doe@example.com" required="required" data-error="Valid email is required.">
                         <label for="frm_email">Email *</label>
                         <div class="valid-feedback">
@@ -380,7 +379,7 @@
                     <!-- /column -->
                     <div class="col-12">
                       <div class="form-floating mb-4">
-                        <textarea id="frm_message" name="message" class="form-control border-0"
+                        <textarea id="frm_message" name="message" class="form-control border-0 bg-soft-primary"
                           placeholder="Your message" style="height: 150px" required></textarea>
                         <label for="frm_message">Message *</label>
                         <div class="valid-feedback">
