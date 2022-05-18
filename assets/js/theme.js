@@ -805,14 +805,20 @@ var theme = {
         loopCount: 'infinite'
       });
     }
-    if(document.querySelector(".rotator-fade") != null) {
-      var replace = new ReplaceMe(document.querySelector('.rotator-fade'), {
-        animation: 'animate__animated animate__fadeInDown',
-        speed: 2500,
-        separator: ',',
-        clickChange: false,
-        loopCount: 'infinite'
-      });
+
+    var toFade = document.querySelectorAll(".rotator-fade");
+
+    if(toFade.length != 0) {
+      for (var i = 0; i < toFade.length; i++) {
+        var element = toFade[i];
+        var replace = new ReplaceMe(element, {
+          animation: 'animate__animated animate__fadeInDown',
+          speed: 2500,
+          separator: ',',
+          clickChange: false,
+          loopCount: 'infinite'
+        });
+        }
     }
   },
   /**
