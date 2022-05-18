@@ -9412,6 +9412,10 @@ textarea.form-control.is-invalid {
 .text-opacity-100 {
   --bs-text-opacity: 1;
 }
+.text-stellar-peach {
+  --bs-text-opacity: 1;
+  color: #E7A885 !important;
+}
 .bg-blue {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-blue-rgb), var(--bs-bg-opacity)) !important;
