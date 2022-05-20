@@ -495,7 +495,10 @@
       
       // Message is optional, but name + email is not
       if (isValidName && isValidEmail) {
-        const url = `https://script.google.com/macros/s/AKfycbyE_B7m4ZmgwEXD7ZI0F68pLfHGAC6fHBeVe9ZBI0wQ9cc9w2t9fhRyUtLo7krLpDyh/exec`
+
+        // Record in google sheets and sends an email via google scripts
+        // Project: https://script.google.com/u/0/home/projects/1RTrlVYBXXNKbo_DvbRhnqKvxVxjiIfmIVUVgQJdPBqdKRGiBpw8gX6Ei/edit
+        const url = `https://script.google.com/macros/s/AKfycbwvXFScmonkdS8z5YPRkXSbCR3SNEZXFSX0abZSBJhAYSrUrkaoX0JDKYydW1iciBZ9/exec`
 
         $.post(url, {"Name": nameRaw, "Email": emailRaw, "Message": messageRaw});
         setSendMessageButtonState(true)
