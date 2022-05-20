@@ -354,8 +354,8 @@
                       <div class="form-floating mb-4">
                         <input id="frm_name" type="text" name="name" class="form-control border-0 bg-soft-primary"
                           placeholder="Jane" required="required" data-error="First Name is required.">
-                        <label for="frm_name">Name *</label>
-                        <div class="invalid-feedback">
+                        <label for="frm_name">Name</label>
+                        <div class="invalid-tooltip">
                           Please enter your name.
                         </div>
                       </div>
@@ -366,10 +366,7 @@
                         <input id="frm_email" type="email" name="email" class="form-control border-0 bg-soft-primary"
                           placeholder="jane.doe@example.com" required="required" data-error="Valid email is required.">
                         <label for="frm_email">Email *</label>
-                        <div class="valid-feedback">
-                          Looks good!
-                        </div>
-                        <div class="invalid-feedback">
+                        <div class="invalid-tooltip">
                           Please provide a valid email address.
                         </div>
                       </div>
@@ -379,13 +376,7 @@
                       <div class="form-floating mb-4">
                         <textarea id="frm_message" name="message" class="form-control border-0 bg-soft-primary"
                           placeholder="Your message" style="height: 150px" required></textarea>
-                        <label for="frm_message">Message *</label>
-                        <div class="valid-feedback">
-                          Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                          Please enter your messsage.
-                        </div>
+                        <label for="frm_message">Message</label>
                       </div>
                     </div>
                     <!-- /column -->
@@ -454,6 +445,39 @@
   <script src="./assets/js/theme.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   <script>
+    /*
+    The template for this form is confusing so we're just gonna roll with our own
+    */
+    const showValidatedResults = (input, isValid) => {
+      if (isValid) {
+        input.classList.add('is-valid');
+        input.classList.remove('is-invalid');
+      } else {
+        input.classList.add('is-invalid');
+        input.classList.remove('is-valid');
+      }
+    }
+
+    const setSendMessageButtonState  = (isValidInput) => {
+      const button = document.getElementById("email-button");
+
+      if (isValidInput) {
+        button.textContent = "Sent!";
+        button.classList.add('btn-outline-success');
+        button.classList.remove('btn-outline-primary');
+      } else {
+        button.textContent = "Send Message";
+        button.classList.add('btn-outline-primary');
+        button.classList.remove('btn-outline-success');
+      }
+    }
+
+    const disableButton = () => {
+      const button = document.getElementById("email-button");
+      button.disabled = true;
+    }
+
+
     function sendMessageForm() {
       const nameInput = document.getElementById("frm_name");
       const emailInput = document.getElementById("frm_email");
@@ -464,17 +488,22 @@
       const messageRaw = messageInput.value;
 
       const isValidEmail = getIsValidEmail(emailRaw);
+      const isValidName = !!nameRaw.trim()
 
-      if (isValidEmail) {
-        const nameEncoded = encodeURIComponent(nameRaw);
-        const messageEncoded = encodeURIComponent(messageRaw);
-        const emailEncoded = encodeURIComponent(emailRaw);
-        const url = `https://docs.google.com/forms/u/0/d/e/1FAIpQLSdSWbTGNVwPcXGWsZdgyixlhmv3aO6xFlWj2Fg4rPbeNStY3w/formResponse?entry.399186497=${nameEncoded}&entry.601742447=${emailEncoded}&entry.1619802152=${messageEncoded}&submit=Submit`
+      showValidatedResults(emailInput, isValidEmail);
+      showValidatedResults(nameInput, isValidName);
+      
+      // Message is optional, but name + email is not
+      if (isValidName && isValidEmail) {
+        const url = `https://script.google.com/macros/s/AKfycbyE_B7m4ZmgwEXD7ZI0F68pLfHGAC6fHBeVe9ZBI0wQ9cc9w2t9fhRyUtLo7krLpDyh/exec`
 
-        $.get(url);
-        return false;
+        $.post(url, {"Name": nameRaw, "Email": emailRaw, "Message": messageRaw});
+        setSendMessageButtonState(true)
+        disableButton() // duplicate submissions
+        return true;
       } else {
         return false;
+        setSendMessageButtonState(false)
       }
     }
 
@@ -483,6 +512,7 @@
 
       isValid = email.match(pattern)
       return Boolean(isValid)
+
     };
   </script>
 </body>
