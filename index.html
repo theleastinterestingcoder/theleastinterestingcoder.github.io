@@ -498,7 +498,7 @@
 
         // Record in google sheets and sends an email via google scripts
         // Project: https://script.google.com/u/0/home/projects/1RTrlVYBXXNKbo_DvbRhnqKvxVxjiIfmIVUVgQJdPBqdKRGiBpw8gX6Ei/edit
-        const url = `https://script.google.com/macros/s/AKfycbwvXFScmonkdS8z5YPRkXSbCR3SNEZXFSX0abZSBJhAYSrUrkaoX0JDKYydW1iciBZ9/exec`
+        const url = `https://script.google.com/macros/s/AKfycbz2rlPGocnFSkin8wDWCQKoETi3r3gp_qSFeRCCKqDlo6eXzU5mj_qBGa6PzSKM_pUp/exec`
 
         $.post(url, {"Name": nameRaw, "Email": emailRaw, "Message": messageRaw});
         setSendMessageButtonState(true)
