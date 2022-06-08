@@ -85,6 +85,7 @@ Author:		elemis
   --bs-info: #54a8c7;
   --bs-warning: #fab758;
   --bs-danger: #e2626b;
+  --bs-stellar-light-peach: #e2626b;
   --bs-blue-rgb: 63, 120, 224;
   --bs-sky-rgb: 94, 185, 240;
   --bs-purple-rgb: 116, 126, 209;
@@ -110,6 +111,7 @@ Author:		elemis
   --bs-info-rgb: 84, 168, 199;
   --bs-warning-rgb: 250, 183, 88;
   --bs-danger-rgb: 226, 98, 107;
+  --bs-stellar-light-peach-rgb: 253, 247, 242;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 96, 105, 123;
@@ -9519,6 +9521,10 @@ textarea.form-control.is-invalid {
 .bg-black {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
+}
+.bg-stellar-light-peach {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-stellar-light-peach-rgb), var(--bs-bg-opacity)) !important;
 }
 .bg-body {
   --bs-bg-opacity: 1;
