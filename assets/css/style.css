@@ -9282,6 +9282,10 @@ textarea.form-control.is-invalid {
   --bs-text-opacity: 1;
   color: #5eb9f0 !important;
 }
+.text-stellar-sky {
+  --bs-text-opacity: 1;
+  color: #89A4D7 !important;
+}
 .text-purple {
   --bs-text-opacity: 1;
   color: #747ed1 !important;
