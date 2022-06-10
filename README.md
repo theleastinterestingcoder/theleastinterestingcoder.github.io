@@ -70,3 +70,4 @@ stellarapp.io
 Contributors
 =======
 quan@stellarapp.io
+elise@stellarapp.io
