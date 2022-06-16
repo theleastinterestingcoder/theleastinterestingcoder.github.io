@@ -9286,6 +9286,10 @@ textarea.form-control.is-invalid {
   --bs-text-opacity: 1;
   color: #89A4D7 !important;
 }
+.text-white-sky {
+  --bs-text-opacity: 1;
+  color: #ffffff !important;
+}
 .text-purple {
   --bs-text-opacity: 1;
   color: #747ed1 !important;
@@ -24770,6 +24774,9 @@ form.dark-fields .form-control:focus {
   font-size: 0.8rem;
   border-radius: 0.4rem;
   transition: all 0.2s ease-in-out;
+}
+.btn-stellar {
+  background-color:#ffffff;
 }
 @media (prefers-reduced-motion: reduce) {
   .btn {
