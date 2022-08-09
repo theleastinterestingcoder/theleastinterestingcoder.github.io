@@ -54,7 +54,7 @@ git add -A
 
 git status #verify
 
-git commit -m "Adds myself to the contributors"
+git commit -m "[Readme] Adds myself to the contributors"
 ```
 
 1. push and verify
